@@ -4,7 +4,8 @@
 
 <main>
 	<h1>Randomize emoji</h1>
-	<EmojiDisplay />
+	<EmojiDisplay emojiAngry={'😡'} emojiHappy={'😊'}/>
+	<EmojiDisplay emojiAngry={'😡'} emojiHappy={'😊'}/>
 	<div>Test</div>
 	<button>🔁 Randomize</button>
 </main>
