@@ -1,13 +1,22 @@
 <script>
 	import EmojiDisplay from "./EmojiDisplay.svelte"
+	import EmojiDesc from "./EmojiDesc.svelte"
+	let currentEmoji = '😀'
+	const emojis = ['😀', '😊', '😎', '🙋‍♀️']
+	function randomEmojis(){
+		return emojis[Math.floor(Math.random() * emojis.length)]
+	}
+	function handleButton(){
+		currentEmoji = randomEmojis()
+	}
 </script>
 
 <main>
 	<h1>Randomize emoji</h1>
-	<EmojiDisplay emojiAngry={'😡'} emojiHappy={'😊'}/>
-	<EmojiDisplay emojiAngry={'😡'} emojiHappy={'😊'}/>
-	<div>Test</div>
-	<button>🔁 Randomize</button>
+	<EmojiDisplay {currentEmoji}/>
+	<EmojiDesc />
+	<!-- <div>{emoji}</div> -->
+	<button on:click={handleButton}>🔁 Randomize</button>
 </main>
 
 <style>

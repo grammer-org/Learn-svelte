@@ -1,10 +1,5 @@
 <script>
-	export let emojiAngry
-	export let emojiHappy
-	let currentEmoji = emojiAngry
-	setTimeout(() => {
-		currentEmoji = emojiHappy
-	}, 2000)
+	export let currentEmoji
 </script>
 
 <main>
