@@ -1,10 +1,11 @@
 <script>
-	let currentEmoji = "😁"
+	import EmojiDisplay from "./EmojiDisplay.svelte"
 </script>
 
 <main>
 	<h1>Randomize emoji</h1>
-	<div>{currentEmoji}</div>
+	<EmojiDisplay />
+	<div>Test</div>
 	<button>🔁 Randomize</button>
 </main>
 
