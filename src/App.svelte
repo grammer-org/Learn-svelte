@@ -1,6 +1,7 @@
 <script>
 	import EmojiDisplay from "./EmojiDisplay.svelte"
 	import EmojiDesc from "./EmojiDesc.svelte"
+	let isLoaded = false
 	let currentEmoji = '😀'
 	const emojis = ['😀', '😊', '😎', '🙋‍♀️']
 	function randomEmojis(){
@@ -9,29 +10,34 @@
 	function handleButton(){
 		currentEmoji = randomEmojis()
 	}
+
+	setTimeout(function(){
+		isLoaded = true
+	}, 2000)
 </script>
 
-<main>
+<svelte:head>
+	<link rel="stylesheet" href="/terminal.min.css" />
+</svelte:head>
+
+<div class="container">
 	<h1>Randomize emoji</h1>
-	<EmojiDisplay {currentEmoji}/>
-	<EmojiDesc />
-	<!-- <div>{emoji}</div> -->
-	<button on:click={handleButton}>🔁 Randomize</button>
-</main>
+	<ul>
+		{#each emojis as item}
+			<li>{item}</li>
+		{/each}
+	</ul>
+	{#if isLoaded === true}
+		<EmojiDisplay {currentEmoji}/>
+		<EmojiDesc />
+		<!-- <div>{emoji}</div> -->
+		<button class="btn btn-primary" on:click={handleButton}>🔁 Randomize</button>
+	{:else}
+	<h2>Loading...</h2>
+	{/if}
+</div>
 
 <style>
-	button {
-		background-color: aqua;
-		padding: 0.75em;
-		border-radius: 0.25em;
-		border: 2px solid black;
-		box-shadow: 0.4em 0.4em 0 black;
-		transition: all 0.4s ease;
-	}
-	button:hover {
-		box-shadow: 0.25em 0.25em 0 #222;
-		background-color: aquamarine;
-	}
 	main {
 		margin: 2em;
 	}

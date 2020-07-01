@@ -7,14 +7,12 @@
     }
 </script>
 
-<main>
-    <div>
-        <p>{desc}</p>
-        <textarea bind:value={desc} rows="7"></textarea>
-        <p>Text length: {descLength}</p>
-        <p>Words count: {descWords}</p>
-    </div>
-</main>
+<div class="form-group">
+    <p>{desc}</p>
+    <textarea bind:value={desc} rows="7"></textarea>
+    <p>Text length: {descLength}</p>
+    <p>Words count: {descWords}</p>
+</div>
 
 <style>
     div {
