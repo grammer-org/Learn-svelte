@@ -13,10 +13,4 @@
 		font-size: 5em;
 		margin: 0.4em
 	}
-	button {
-		background-color: orange
-	}
-	.active{
-		background-color: aqua
-	}
 </style>

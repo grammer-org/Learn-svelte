@@ -1,6 +1,7 @@
 <script>
 	import EmojiDisplay from "./EmojiDisplay.svelte"
 	import EmojiDesc from "./EmojiDesc.svelte"
+	import Button from "./Button.svelte"
 	let isLoaded = false
 	let currentEmoji = '😀'
 	const emojis = ['😀', '😊', '😎', '🙋‍♀️']
@@ -31,14 +32,10 @@
 		<EmojiDisplay {currentEmoji}/>
 		<EmojiDesc />
 		<!-- <div>{emoji}</div> -->
-		<button class="btn btn-primary" on:click={handleButton}>🔁 Randomize</button>
+		<Button on:click={handleButton} title={'🔁 Randomize'} />
 	{:else}
 	<h2>Loading...</h2>
 	{/if}
 </div>
 
-<style>
-	main {
-		margin: 2em;
-	}
-</style>
+<style></style>
