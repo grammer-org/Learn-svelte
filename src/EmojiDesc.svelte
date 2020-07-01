@@ -2,6 +2,9 @@
     let desc = ''
     $: descLength = desc.length
     $: descWords = desc.split(" ").length
+    $: if(descLength > 10) {
+        console.log(`Description: ${desc}`)
+    }
 </script>
 
 <main>
