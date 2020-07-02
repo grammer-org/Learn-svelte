@@ -1,4 +1,5 @@
 <script>
+    import { onMount, onDestroy, afterUpdate, beforeUpdate } from "svelte"
     let desc = ''
     $: descLength = desc.length
     $: descWords = desc.split(" ").length
@@ -10,6 +11,25 @@
         console.log("test")
         desc = ''
     }
+
+    // onMount => lifecycle yang akan dieksekusi ketika sebuah component di render
+    onMount(() => {
+        console.log("onMount")
+    })
+
+    // onDestroy => lifecycle yang akan dieksekusi ketika sebuah component di hilangkan atau di hapuskan
+    onDestroy(() => {
+        console.log("onDestroy")
+    })
+
+    // beforeUpdate => lifecycle yang akan dieksekusi ketika sebelum DOM di update
+    beforeUpdate(() => {
+        console.log("before update")
+    })
+    // beforeUpdate => lifecycle yang akan dieksekusi ketika DOM telah diupdate
+    afterUpdate(() => {
+        console.log("after update")
+    })
 </script>
 
 <div class="form-group">

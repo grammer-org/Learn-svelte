@@ -45,6 +45,7 @@
 	{:else}
 	<h2>Loading...</h2>
 	{/if}
+	<Button title={'toggle'} on:click={() => isLoaded = !isLoaded} />
 </div>
 
 <style></style>
